@@ -1,0 +1,22 @@
+.card {
+    margin: 3%;
+    width: 50%;
+    height: 50%;
+    border:solid;
+    border-radius: 15%;
+    color: #D07272;
+}
+
+.pictr {
+    width: 30%;
+    height: 60%;
+    margin-left:35%;
+}
+.title {
+    text-align-last: center;
+    color: white;
+}
+.desc {
+    text-align: center;
+    color:white;
+}

@@ -1,0 +1,22 @@
+.ContactHeader {
+    color: white;
+    margin-left: 45%;
+    
+}
+.connect{
+    display: flex;
+    justify-content: center;
+}
+.contact{
+    margin-top: 20%;
+}
+.logo {
+    display: flex;
+    margin-top: 10%;
+    width: 30%;
+    height: 30%;
+}
+.im {
+    width: 80%;
+    height: 80%;
+}

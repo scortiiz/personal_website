@@ -1,15 +1,4 @@
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -76,6 +65,8 @@ a.secondary {
 }
 
 .footer {
+  background-color: #D07272;
+  color: #D07272;
   grid-row-start: 3;
   display: flex;
   gap: 24px;

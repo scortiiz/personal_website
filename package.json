@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "airtable": "^0.12.2",
+    "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.5"
+    "react-social-icons": "^6.18.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.1.5",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "15.1.5"
   }
 }

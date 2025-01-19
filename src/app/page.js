@@ -1,7 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./components/navbar/navbar"
 import About from "./components/about/about"
+import Experience from "./components/experience/experience";
+import Projects from "./components/projects/projects"
+import Contact from "./components/contact/contact";
 
 export default function Home() {
   return (
@@ -9,9 +12,12 @@ export default function Home() {
       <Navbar/>
       <main className={styles.main}>
         <About/>
+        <Experience/>
+        <Projects/>
+        <Contact/>
       </main>
       <footer className={styles.footer}>
-        this is footer
+        <p>umm</p>
       </footer>
     </div>
   );

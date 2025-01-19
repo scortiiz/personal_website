@@ -3,9 +3,9 @@ import Image from 'next/image';
 import './about.css';
 import mepic from '../../../media/mepic.jpg';
 
-const About = () => {
+export default function About() {
     return (
-      <section id="home" className='home'>
+      <section id="about" className='home'>
         <div >
                 <Image
                 className = 'mepic'
@@ -16,10 +16,9 @@ const About = () => {
             <div className = 'intro'>
                 <h1 className = 'head'> Hello!</h1>
                 <p className = 'name'> Im Sophia </p>
-                <p className = 'lilintro'> I am a sophomore at UC Berkeley studying Electrical Engineering & Computer Science</p>
+                <p className = 'lilintro'> I am a student at UC Berkeley studying Electrical Engineering & Computer Science</p>
             </div>
       </section>
     );
   };
   
-  export default About;

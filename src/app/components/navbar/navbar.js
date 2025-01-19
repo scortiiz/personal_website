@@ -35,16 +35,12 @@ const Navbar = () => {
 
   return (
     <header className={styles.header}>
-      <a href="#" className={styles.logo}>
-        ActiveLink.
-      </a>
       <nav className = {styles.nav}>
-        <a href="#home" className={styles.active}>
-          Home
+        <a href="#about" >
+          About
         </a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
