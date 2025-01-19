@@ -2,7 +2,6 @@
   "name": "sophiacarazo",
   "version": "0.1.0",
   "private": true,
-  "type":"module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -10,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^8.20.0",
     "airtable": "^0.12.2",
     "next": "15.1.5",
     "react": "^19.0.0",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.1.5"
+    "eslint-config-next": "15.1.5",
+    "typescript": "^5.7.3"
   }
 }
