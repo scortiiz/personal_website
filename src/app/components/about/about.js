@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Image from 'next/image';
 import './about.css';
 import mepic from '../../../media/mepic.jpg';
