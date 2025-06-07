@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Navbar from "./components/navbar/navbar";
 import About from "./components/about/about";
 import Experience from "./components/experience/experience";
