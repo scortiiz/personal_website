@@ -7,10 +7,16 @@ const nextConfig = {
         hostname: 'dl.airtable.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'v5.airtableusercontent.com',
+        pathname: '/**',
+      },
     ],
   },
 };
 
 export default nextConfig;
+
 
   
