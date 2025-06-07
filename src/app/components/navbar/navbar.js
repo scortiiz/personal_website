@@ -14,6 +14,7 @@ const Navbar = () => {
         const height = section.offsetHeight;
         const id = section.getAttribute('id');
 
+        
         if (top >= offset && top < offset + height) {
           navLinks.forEach((link) => {
             link.classList.remove(styles.active);
