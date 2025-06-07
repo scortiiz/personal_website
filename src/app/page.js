@@ -4,7 +4,7 @@ import Experience from "./components/experience/experience";
 import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
 import styles from "./page.module.css";
-import { getExperience, getProjects } from "./lib/getTable";
+import { getExperience, getProjects } from "./lib/getTable.server";
 
 export default async function Home() {
   // Fetch data server-side
