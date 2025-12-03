@@ -41,9 +41,9 @@ a {
   }
 }
 
-section {
-  scroll-margin-top: 100px; /* Match your navbar height */
-}
+/* section {
+  scroll-margin-top: 60px; /* Match your navbar height */
+/* } */ 
 
 /* Ensure responsive background */
 @media (max-width: 768px) {
@@ -51,4 +51,9 @@ section {
     background-size: cover;
     background-position: center;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  /* scroll-margin-top: 20px; */
 }

@@ -1,11 +1,19 @@
 .card {
     margin: 2%;
-    width: calc(50% - 4%);
-    min-width: 280px;
+    width: 350px;
+    min-width: 350px;
+    max-width: 350px;
+    flex-shrink: 0;
     border: solid;
     border-radius: 15%;
     color: #D07272;
     box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(208, 114, 114, 0.3);
 }
 
 .pictr {
@@ -30,16 +38,18 @@
 /* Tablet styles */
 @media (max-width: 768px) {
     .card {
-        width: calc(50% - 4%);
-        min-width: 250px;
+        width: 300px;
+        min-width: 300px;
+        max-width: 300px;
     }
 }
 
 /* Mobile styles */
 @media (max-width: 480px) {
     .card {
-        width: 90%;
-        margin: 3% auto;
+        width: 280px;
+        min-width: 280px;
+        max-width: 280px;
     }
     
     .pictr {
