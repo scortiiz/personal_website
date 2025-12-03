@@ -1,22 +1,48 @@
 .card {
-    margin: 3%;
-    width: 50%;
-    height: 50%;
-    border:solid;
+    margin: 2%;
+    width: calc(50% - 4%);
+    min-width: 280px;
+    border: solid;
     border-radius: 15%;
     color: #D07272;
+    box-sizing: border-box;
 }
 
 .pictr {
-    width: 30%;
-    height: 60%;
-    margin-left:35%;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 .title {
-    text-align-last: center;
+    text-align: center;
     color: white;
+    padding: 10px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
 }
 .desc {
     text-align: center;
-    color:white;
+    color: white;
+    padding: 10px;
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 4%);
+        min-width: 250px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        margin: 3% auto;
+    }
+    
+    .pictr {
+        width: 90%;
+    }
 }

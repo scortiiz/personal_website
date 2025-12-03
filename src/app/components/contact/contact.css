@@ -1,22 +1,66 @@
 .ContactHeader {
     color: white;
-    margin-left: 45%;
-    
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 2%;
 }
 .connect{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 5%;
 }
 .contact{
     margin-top: 20%;
+    padding: 0 5%;
 }
 .logo {
     display: flex;
     margin-top: 10%;
     width: 30%;
-    height: 30%;
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.1);
 }
 .im {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: auto;
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .contact {
+        padding: 0 3%;
+    }
+    
+    .logo {
+        width: 25%;
+        max-width: 120px;
+    }
+    
+    .connect {
+        gap: 15px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .contact {
+        margin-top: 15%;
+        padding: 0 2%;
+    }
+    
+    .logo {
+        width: 40%;
+        max-width: 100px;
+        margin-top: 5%;
+    }
+    
+    .connect {
+        gap: 10px;
+    }
 }

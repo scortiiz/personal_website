@@ -3,13 +3,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 120px;
+    padding: 20px 5%;
     background: #D07272;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 100;
-    
   }
   
   .logo {
@@ -20,7 +19,10 @@
   }
 
   .nav {
-    margin-left: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
   }
   
   .nav a {
@@ -28,10 +30,10 @@
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 13px;
     padding: 5px 10px;
     border :2px solid transparent;
     transition: all 0.3s ease;
+    white-space: nowrap;
   }
   
   .nav a:hover{
@@ -39,4 +41,32 @@
     border-radius: 5px;
     background-color: #F4E8CF;
     color: #D07272;
+  }
+
+  /* Tablet styles */
+  @media (max-width: 768px) {
+    .header {
+      padding: 15px 3%;
+    }
+    
+    .nav a {
+      font-size: 16px;
+      padding: 4px 8px;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 480px) {
+    .header {
+      padding: 12px 2%;
+    }
+    
+    .nav {
+      gap: 4px;
+    }
+    
+    .nav a {
+      font-size: 14px;
+      padding: 4px 6px;
+    }
   }

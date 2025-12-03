@@ -44,3 +44,11 @@ a {
 section {
   scroll-margin-top: 100px; /* Match your navbar height */
 }
+
+/* Ensure responsive background */
+@media (max-width: 768px) {
+  :root {
+    background-size: cover;
+    background-position: center;
+  }
+}
