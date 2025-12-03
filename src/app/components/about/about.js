@@ -37,7 +37,7 @@ export default function About() {
                     </div>
                     <div className="intro-expanded">
                         <div className="more-info-loading">
-                            <p>I LOVE BUILDING TO MAKE IMPACT!!! I care a lot about mentorship, community, and representation within tech. I am always learning new tech and currently working on observability dashboards using Grafana and Prometheus. I've spend my whole life in the East Bay and I am huge on trying new things(music, games, food, and I went skydiving this summer!)</p>
+                            <p>I LOVE BUILDING TO MAKE IMPACT!!! I care a lot about mentorship, community, and representation within tech. I am always learning new tech and currently working on observability dashboards using Grafana and Prometheus. I&apos;ve spend my whole life in the East Bay and I am huge on trying new things(music, games, food, and I went skydiving this summer!)</p>
                         </div>
                     </div>
                 </div>
