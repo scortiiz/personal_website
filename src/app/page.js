@@ -5,6 +5,7 @@ import About from "./components/about/about";
 import Experience from "./components/experience/experience";
 import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
+import Debug from "./components/debug/debug";
 import styles from "./page.module.css";
 import { getExperience, getProjects } from "./lib/getTable.server";
 
@@ -38,6 +39,7 @@ export default async function Home() {
       <footer className={styles.footer}>
         <p>umm</p>
       </footer>
+      <Debug experience={experience} projects={projects} />
     </div>
   );
 }
