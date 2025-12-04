@@ -1,21 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Card from "../cards/cards";
 import Modal from "../modal/modal";
 
 const Experience = ({ experience }) => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    console.log('[Experience Component] Props received:', {
-      experience,
-      isArray: Array.isArray(experience),
-      length: experience?.length,
-      type: typeof experience,
-      firstItem: experience?.[0]
-    });
-  }, [experience]);
 
   const handleCardClick = (data) => {
     setSelectedCard(data);

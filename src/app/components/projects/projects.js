@@ -1,21 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Card from "../cards/cards";
 import Modal from "../modal/modal";
 
 const Projects = ({ projects }) => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    console.log('[Projects Component] Props received:', {
-      projects,
-      isArray: Array.isArray(projects),
-      length: projects?.length,
-      type: typeof projects,
-      firstItem: projects?.[0]
-    });
-  }, [projects]);
 
   const handleCardClick = (data) => {
     setSelectedCard(data);
