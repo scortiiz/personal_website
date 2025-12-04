@@ -31,7 +31,7 @@ const Contact = () => {
 						</svg>
 					</a>
 					<a 
-						href="mailto:your-email@example.com" 
+						href="mailto:scarazoortiz@berkeley.edu" 
 						className="social-link email"
 						aria-label="Email"
 					>

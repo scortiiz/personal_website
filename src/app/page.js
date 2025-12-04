@@ -13,6 +13,18 @@ export default async function Home() {
   const experience = await getExperience();
   const projects = await getProjects();
 
+  // Debug logging
+  console.log('[Page] Experience data received:', {
+    isArray: Array.isArray(experience),
+    length: experience?.length,
+    firstItem: experience?.[0] ? 'exists' : 'missing'
+  });
+  console.log('[Page] Projects data received:', {
+    isArray: Array.isArray(projects),
+    length: projects?.length,
+    firstItem: projects?.[0] ? 'exists' : 'missing'
+  });
+
   return (
     <div className={styles.page}>
       <Navbar />

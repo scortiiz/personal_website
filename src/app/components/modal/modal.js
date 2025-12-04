@@ -92,3 +92,5 @@ const Modal = ({ isOpen, onClose, data }) => {
 
 export default Modal;
 
+
+

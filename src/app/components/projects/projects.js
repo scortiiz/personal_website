@@ -1,11 +1,21 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from "../cards/cards";
 import Modal from "../modal/modal";
 
 const Projects = ({ projects }) => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    console.log('[Projects Component] Props received:', {
+      projects,
+      isArray: Array.isArray(projects),
+      length: projects?.length,
+      type: typeof projects,
+      firstItem: projects?.[0]
+    });
+  }, [projects]);
 
   const handleCardClick = (data) => {
     setSelectedCard(data);
@@ -26,10 +36,10 @@ const Projects = ({ projects }) => {
             projects.map((data, index) => (
               <Card
                 key={index}
-                title={data.fields.Name}
-                value={data.fields.Notes}
-                type={data.fields.Type}
-                imageURL={data.fields.Pics[0]?.url}
+                title={data.fields?.Name || "Untitled"}
+                value={data.fields?.Notes || "No details available"}
+                type={data.fields?.Type || "General"}
+                imageURL={data.fields?.Pics?.[0]?.url || "/placeholder.png"}
                 data={data}
                 onClick={handleCardClick}
               />
