@@ -4,8 +4,8 @@ import './cards.css';
 
 function Card(props) {
     const handleClick = () => {
-        if (props.onClick && props.data) {
-            props.onClick(props.data);
+        if (props.onClick) {
+            props.onClick();
         }
     };
 

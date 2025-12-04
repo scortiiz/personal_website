@@ -4,22 +4,28 @@ import Card from "../cards/cards";
 import Modal from "../modal/modal";
 
 const Projects = ({ projects }) => {
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCardClick = (data) => {
-    setSelectedCard(data);
+  const handleCardClick = (data, index) => {
+    setSelectedIndex(index);
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setSelectedCard(null);
+    setSelectedIndex(null);
   };
+
+  const handleNavigate = (newIndex) => {
+    setSelectedIndex(newIndex);
+  };
+
+  const currentData = selectedIndex !== null && projects ? projects[selectedIndex] : null;
 
   return (
     <div>
-      <h1 className="headers">Projects</h1>
+      <h1 className="headers">Organizations and Impact</h1>
       <div className="cards-container">
         <section id="projects" className="home">
           {projects && projects.length > 0 ? (
@@ -31,18 +37,21 @@ const Projects = ({ projects }) => {
                 type={data.fields?.Type || "General"}
                 imageURL={data.fields?.Pics?.[0]?.url || "/placeholder.png"}
                 data={data}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick(data, index)}
               />
             ))
           ) : (
-            <p>No projects available</p>
+            <p>No organizations and impact available</p>
           )}
         </section>
       </div>
       <Modal 
         isOpen={isModalOpen} 
         onClose={handleCloseModal} 
-        data={selectedCard}
+        data={currentData}
+        allItems={projects}
+        currentIndex={selectedIndex}
+        onNavigate={handleNavigate}
       />
     </div>
   );

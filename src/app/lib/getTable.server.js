@@ -30,7 +30,15 @@ const projects = base(projectsTableName);
 export async function getExperience() {
   try {
     const records = await experience.select({}).all();
-    return records.map((record) => ({
+    const sortedRecords = records.sort((a, b) => {
+      const orderA = a.fields?.Order ?? a.fields?.order ?? Infinity;
+      const orderB = b.fields?.Order ?? b.fields?.order ?? Infinity;
+      if (orderA !== Infinity || orderB !== Infinity) {
+        return (orderA || 0) - (orderB || 0);
+      }
+      return 0;
+    });
+    return sortedRecords.map((record) => ({
       fields: record.fields,
     }));
   } catch (error) {
@@ -42,7 +50,15 @@ export async function getExperience() {
 export async function getProjects() {
   try {
     const records = await projects.select({}).all();
-    return records.map((record) => ({
+    const sortedRecords = records.sort((a, b) => {
+      const orderA = a.fields?.Order ?? a.fields?.order ?? Infinity;
+      const orderB = b.fields?.Order ?? b.fields?.order ?? Infinity;
+      if (orderA !== Infinity || orderB !== Infinity) {
+        return (orderA || 0) - (orderB || 0);
+      }
+      return 0;
+    });
+    return sortedRecords.map((record) => ({
       fields: record.fields,
     }));
   } catch (error) {

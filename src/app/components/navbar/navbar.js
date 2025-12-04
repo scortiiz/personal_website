@@ -56,10 +56,10 @@ const Navbar = () => {
           About
         </a>
         <a href="#experience" onClick={scrollToSection('experience')}>
-          Experience
+          Technical Work
         </a>
         <a href="#projects" onClick={scrollToSection('projects')}>
-          Projects
+          Organizations and Impact
         </a>
         <a href="#contact" onClick={scrollToSection('contact')}>
           Contact

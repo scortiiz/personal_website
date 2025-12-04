@@ -4,22 +4,28 @@ import Card from "../cards/cards";
 import Modal from "../modal/modal";
 
 const Experience = ({ experience }) => {
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCardClick = (data) => {
-    setSelectedCard(data);
+  const handleCardClick = (data, index) => {
+    setSelectedIndex(index);
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setSelectedCard(null);
+    setSelectedIndex(null);
   };
+
+  const handleNavigate = (newIndex) => {
+    setSelectedIndex(newIndex);
+  };
+
+  const currentData = selectedIndex !== null && experience ? experience[selectedIndex] : null;
 
   return (
     <div>
-      <h1 className="headers">Experience</h1>
+      <h1 className="headers">Technical Work</h1>
       <div className="cards-container">
         <section id="experience" className="home">
           {experience && experience.length > 0 ? (
@@ -31,18 +37,21 @@ const Experience = ({ experience }) => {
                 type={data.fields.Type || "General"}
                 imageURL={data.fields.Pics?.[0]?.url || "/placeholder.png"}
                 data={data}
-                onClick={handleCardClick}
+                onClick={() => handleCardClick(data, index)}
               />
             ))
           ) : (
-            <p>No experience available</p>
+            <p>No technical work available</p>
           )}
         </section>
       </div>
       <Modal 
         isOpen={isModalOpen} 
         onClose={handleCloseModal} 
-        data={selectedCard}
+        data={currentData}
+        allItems={experience}
+        currentIndex={selectedIndex}
+        onNavigate={handleNavigate}
       />
     </div>
   );

@@ -3,27 +3,34 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import './modal.css';
 
-const Modal = ({ isOpen, onClose, data }) => {
-  // Close modal on Escape key
+const Modal = ({ isOpen, onClose, data, allItems, currentIndex, onNavigate }) => {
+  // Close modal on Escape key, navigate with arrow keys
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         onClose();
+      } else if (e.key === 'ArrowLeft' && allItems && currentIndex > 0) {
+        onNavigate(currentIndex - 1);
+      } else if (e.key === 'ArrowRight' && allItems && currentIndex < allItems.length - 1) {
+        onNavigate(currentIndex + 1);
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, allItems, currentIndex, onNavigate]);
 
   if (!isOpen || !data) return null;
+
+  const canGoPrevious = allItems && currentIndex > 0;
+  const canGoNext = allItems && currentIndex < allItems.length - 1;
 
   // Parse Info field - handle both string and array formats
   const getInfoPoints = () => {
@@ -53,6 +60,32 @@ const Modal = ({ isOpen, onClose, data }) => {
         <button className="modal-close" onClick={onClose} aria-label="Close modal">
           ×
         </button>
+        
+        {canGoPrevious && (
+          <button 
+            className="modal-nav modal-nav-left" 
+            onClick={(e) => {
+              e.stopPropagation();
+              onNavigate(currentIndex - 1);
+            }}
+            aria-label="Previous item"
+          >
+            ‹
+          </button>
+        )}
+        
+        {canGoNext && (
+          <button 
+            className="modal-nav modal-nav-right" 
+            onClick={(e) => {
+              e.stopPropagation();
+              onNavigate(currentIndex + 1);
+            }}
+            aria-label="Next item"
+          >
+            ›
+          </button>
+        )}
         
         <div className="modal-body">
           <div className="modal-left">
